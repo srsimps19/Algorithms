@@ -3,7 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = float('inf')
+  for ing, amount in recipe.items():
+    if not ing in ingredients.keys() or ingredients[ing] - amount < 0:
+      return 0
+    if ingredients[ing] // amount < batches:
+      batches = ingredients[ing] // amount
+  return batches
 
 
 if __name__ == '__main__':
