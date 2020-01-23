@@ -3,8 +3,15 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
-
+  results = 0
+  if amount < 0:
+    return 0
+  if amount == 0 or 1:
+    return 1
+  if amount > 2:
+    for i in denominations:
+      results += amount - i
+    return results
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
